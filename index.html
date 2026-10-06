@@ -7,6 +7,7 @@
     name="description"
     content="South Guerilla Entertainment — More Than Music."
   />
+
   <title>South Guerilla Entertainment</title>
 
   <style>
@@ -46,6 +47,14 @@
     button {
       font: inherit;
     }
+
+    section {
+      width: min(var(--max-width), calc(100% - 40px));
+      margin: 0 auto;
+      scroll-margin-top: 100px;
+    }
+
+    /* Header */
 
     .site-header {
       position: sticky;
@@ -117,6 +126,8 @@
       letter-spacing: 0.12em;
     }
 
+    /* Hero */
+
     .hero {
       position: relative;
       min-height: 760px;
@@ -133,22 +144,30 @@
       inset: 0;
       z-index: -3;
       background:
-        linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.15) 50%, rgba(0, 0, 0, 0.9) 100%),
-        linear-gradient(180deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.82) 96%),
+        linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.9) 0%,
+          rgba(0, 0, 0, 0.15) 50%,
+          rgba(0, 0, 0, 0.9) 100%
+        ),
+        linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.12) 0%,
+          rgba(0, 0, 0, 0.82) 96%
+        ),
         #050505;
     }
 
-    /*
-      Replace this image with your gorilla artwork:
-      Example:
-      background-image: url("south-guerilla-gorilla.png");
-    */
     .hero-art {
       position: absolute;
       inset: 0;
       z-index: -2;
       background-image:
-        linear-gradient(180deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.45)),
+        linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.05),
+          rgba(0, 0, 0, 0.45)
+        ),
         url("South Guerilla Entertainment.jpg");
       background-repeat: no-repeat;
       background-position: center 44%;
@@ -211,6 +230,8 @@
       flex-wrap: wrap;
     }
 
+    /* Buttons */
+
     .button {
       display: inline-flex;
       align-items: center;
@@ -224,7 +245,10 @@
       font-weight: 900;
       letter-spacing: 0.04em;
       text-transform: uppercase;
-      transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+      transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        color 0.2s ease;
     }
 
     .button:hover {
@@ -249,10 +273,7 @@
       border-color: var(--white);
     }
 
-    section {
-      width: min(var(--max-width), calc(100% - 40px));
-      margin: 0 auto;
-    }
+    /* Section headings */
 
     .section {
       padding: 110px 0;
@@ -283,6 +304,8 @@
       color: var(--red);
     }
 
+    /* Releases */
+
     .release-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -306,7 +329,11 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, transparent 20%, rgba(0, 0, 0, 0.94) 100%),
+        linear-gradient(
+          180deg,
+          transparent 20%,
+          rgba(0, 0, 0, 0.94) 100%
+        ),
         var(--card-image, linear-gradient(135deg, #282828, #070707));
       background-position: center;
       background-size: cover;
@@ -360,55 +387,115 @@
       text-transform: uppercase;
     }
 
-    .about {
+    /* Artist roster */
+
+    .artist-roster {
       width: 100%;
-      background:
-        linear-gradient(90deg, rgba(0, 0, 0, 0.96), rgba(0, 0, 0, 0.58)),
-        #151515;
+      padding: 70px 24px;
+      background: #080808;
+      color: var(--white);
       border-top: 1px solid #202020;
       border-bottom: 1px solid #202020;
     }
 
-    .about-inner {
-      width: min(var(--max-width), calc(100% - 40px));
+    .artist-roster-inner {
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 105px 0;
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 70px;
-      align-items: center;
     }
 
-    .about-copy p {
-      max-width: 630px;
-      color: #cfcfcf;
-      font-size: 1.08rem;
-      line-height: 1.8;
-    }
-
-    .about-copy p:first-of-type {
-      margin-top: 0;
-    }
-
-    .statement {
-      padding: 42px;
-      border-left: 9px solid var(--red);
-      background: #090909;
-    }
-
-    .statement p {
-      margin: 0;
-      color: var(--white);
-      font-size: clamp(1.7rem, 3.2vw, 3rem);
-      line-height: 1.03;
-      font-weight: 1000;
-      letter-spacing: -0.055em;
+    .roster-heading {
+      margin: 0 0 28px;
+      padding-left: 14px;
+      border-left: 4px solid var(--red);
+      font-size: clamp(1.6rem, 4vw, 2.5rem);
+      font-weight: 800;
+      line-height: 1.1;
       text-transform: uppercase;
     }
 
-    .statement p span {
+    .roster-heading span {
       color: var(--red);
     }
+
+    .roster-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 240px;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .featured-artist {
+      min-width: 0;
+      margin: 0;
+      padding: 10px;
+      background: #141414;
+      border: 1px solid #282828;
+    }
+
+    .featured-artist > img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center top;
+      background: #222;
+    }
+
+    .featured-artist figcaption {
+      padding: 16px 6px 8px;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    .artist-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .artist-card {
+      display: block;
+      width: 100%;
+      padding: 6px;
+      overflow: hidden;
+      border: 2px solid #282828;
+      background: #141414;
+      color: var(--white);
+      text-align: left;
+      cursor: pointer;
+      transition:
+        border-color 180ms ease,
+        background-color 180ms ease;
+    }
+
+    .artist-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      object-position: center top;
+      background: #222;
+    }
+
+    .artist-card span {
+      display: block;
+      padding: 9px 4px 4px;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .artist-card:hover,
+    .artist-card.is-active {
+      border-color: var(--red);
+      background: #211214;
+    }
+
+    .artist-card:focus-visible {
+      outline: 3px solid var(--white);
+      outline-offset: 3px;
+    }
+
+    /* Videos */
 
     .video-grid {
       display: grid;
@@ -436,7 +523,11 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.92)),
+        linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.05),
+          rgba(0, 0, 0, 0.92)
+        ),
         var(--video-image, linear-gradient(135deg, #2c2c2c, #050505));
       background-size: cover;
       background-position: center;
@@ -447,7 +538,7 @@
       z-index: 1;
     }
 
-    .play-button {
+    .video-card .play-button {
       position: absolute;
       top: 26px;
       left: 26px;
@@ -477,18 +568,30 @@
       color: #cfcfcf;
     }
 
+    /* Contact */
+
     .contact {
       text-align: center;
       padding-bottom: 125px;
     }
 
-    .contact p {
+    .contact .section-heading {
+      display: block;
+    }
+
+    .contact .section-heading::before {
+      content: none;
+    }
+
+    .contact p:not(.eyebrow) {
       max-width: 670px;
       margin: 0 auto 28px;
       color: #c8c8c8;
       line-height: 1.7;
       font-size: 1.05rem;
     }
+
+    /* Footer */
 
     .footer {
       border-top: 1px solid var(--line);
@@ -517,6 +620,8 @@
     .footer-brand span {
       color: var(--red);
     }
+
+    /* Tablet and mobile */
 
     @media (max-width: 820px) {
       .nav {
@@ -569,11 +674,6 @@
         min-height: 350px;
       }
 
-      .about-inner {
-        grid-template-columns: 1fr;
-        gap: 38px;
-      }
-
       .video-grid {
         grid-template-columns: 1fr;
       }
@@ -588,15 +688,47 @@
         flex-direction: column;
         justify-content: center;
         text-align: center;
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .artist-roster {
+        padding: 40px 16px;
+      }
+
+      .roster-layout {
+        grid-template-columns: minmax(0, 1fr) 110px;
+        gap: 10px;
+      }
+
+      .featured-artist {
+        padding: 6px;
+      }
+
+      .featured-artist figcaption {
+        font-size: 1rem;
+      }
+
+      .artist-card {
+        padding: 4px;
+      }
+
+      .artist-card span {
+        font-size: 0.75rem;
+        overflow-wrap: anywhere;
+      }
+
+      .artist-list {
+        gap: 8px;
       }
     }
 
     @media (max-width: 480px) {
       .nav,
-      section,
-      .about-inner,
+      section:not(.artist-roster),
       .footer-inner {
-        width: min(100% - 28px, var(--max-width));
+        width: min(calc(100% - 28px), var(--max-width));
       }
 
       .brand {
@@ -606,7 +738,7 @@
       }
 
       .hero-content {
-        width: min(100% - 28px, 980px);
+        width: min(calc(100% - 28px), 980px);
       }
 
       .hero h1 {
@@ -636,36 +768,66 @@
       .section-heading::before {
         flex-basis: 7px;
       }
-
-      .statement {
-        padding: 30px 25px;
-      }
     }
+    /* Artist preview images: fit the entire photo inside each box */
+.artist-card img {
+  display: block;
+  width: 100%;
+  height: 160px;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
+  background: #080808;
+}
+
+/* Keep the preview cards neatly contained */
+.artist-card {
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* Smaller preview boxes on phones */
+@media (max-width: 700px) {
+  .artist-card img {
+    height: 90px;
+  }
+}
   </style>
 </head>
 
 <body>
   <header class="site-header">
     <nav class="nav" aria-label="Main navigation">
-      <a href="#home" class="brand" aria-label="South Guerilla Entertainment home">
+      <a
+        href="#home"
+        class="brand"
+        aria-label="South Guerilla Entertainment home"
+      >
         <span class="south">South Guerilla</span>
         <span class="entertainment">Entertainment</span>
       </a>
 
-      <button class="mobile-menu-button" id="menuButton" aria-expanded="false">
+      <button
+        class="mobile-menu-button"
+        id="menuButton"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mainMenu"
+      >
         Menu
       </button>
 
       <div class="menu" id="mainMenu">
         <a href="#releases">Music</a>
         <a href="#videos">Videos</a>
-        <a href="#about">About</a>
+        <a href="#about">Artists</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
   </header>
 
   <main>
+    <!-- Hero -->
     <section class="hero" id="home">
       <div class="hero-art" aria-hidden="true"></div>
 
@@ -682,12 +844,18 @@
         </p>
 
         <div class="hero-actions">
-          <a class="button button-primary" href="#releases">Listen Now</a>
-          <a class="button button-secondary" href="#videos">Watch Videos</a>
+          <a class="button button-primary" href="#releases">
+            Listen Now
+          </a>
+
+          <a class="button button-secondary" href="#videos">
+            Watch Videos
+          </a>
         </div>
       </div>
     </section>
 
+    <!-- Latest releases -->
     <section class="section" id="releases">
       <h2 class="section-heading">
         Latest <span>Releases</span>
@@ -701,6 +869,8 @@
           <span class="release-label">New Release</span>
           <h3>Mazarute</h3>
           <p>South Guerilla Entertainment</p>
+
+          <!-- Replace # with the streaming link. -->
           <a class="release-link" href="#">Stream Now →</a>
         </article>
 
@@ -726,49 +896,102 @@
       </div>
     </section>
 
-    <section class="about" id="about">
-      <div class="about-inner">
-        <div class="about-copy">
-          <p class="eyebrow">The Movement</p>
+    <!-- Artist roster -->
+    <section
+      class="artist-roster"
+      id="about"
+      aria-labelledby="roster-heading"
+    >
+      <div class="artist-roster-inner">
+        <h2 class="roster-heading" id="roster-heading">
+          Artist <span>Roster</span>
+        </h2>
 
-          <h2 class="section-heading">
-            Built From The <span>South</span>
-          </h2>
+        <div class="roster-layout">
+          <!-- Large selected artist photo -->
+          <figure class="featured-artist">
+            <img
+              id="featured-artist-image"
+              src="images/mazarute.jpg"
+              alt="Mazarute"
+            />
 
-          <p>
-            South Guerilla Entertainment is more than a record label. It is a
-            platform for authentic voices, bold stories, and music that carries
-            the energy of the culture.
-          </p>
+            <figcaption
+              id="featured-artist-name"
+              aria-live="polite"
+            >
+              Mazarute
+            </figcaption>
+          </figure>
 
-          <p>
-            From the studio to the stage, we represent ambition, independence,
-            loyalty, and a sound that cannot be duplicated.
-          </p>
+          <!-- Click an artist to update the large photo -->
+          <div
+            class="artist-list"
+            role="group"
+            aria-label="Choose an artist"
+          >
+            <button
+              class="artist-card is-active"
+              type="button"
+              data-name="Mazarute"
+              data-image="mazarute.jpg"
+              aria-pressed="true"
+            >
+              <img src="mazarute.jpg" alt="" />
+              <span>Mazarute</span>
+            </button>
 
-          <a class="button button-primary" href="#contact">Work With Us</a>
+            <button
+              class="artist-card"
+              type="button"
+              data-name="Gutta Jake"
+              data-image="GuttaJake.jpg"
+              aria-pressed="false"
+            >
+              <img src="GuttaJake.jpg" alt="" />
+              <span>Gutta Jake</span>
+            </button>
+
+            <button
+              class="artist-card"
+              type="button"
+              data-name="Mr Weaver"
+              data-image="Mrweaver.jpg"
+              aria-pressed="false"
+            >
+              <img src="Mrweaver.jpg" alt="" />
+              <span>Mr Weaver</span>
+            </button>
+
+            <button
+              class="artist-card"
+              type="button"
+              data-name="Ya Big Round Ant"
+              data-image="YaBigRoundAnt.jpg"
+              aria-pressed="false"
+            >
+              <img src="YaBigRoundAnt.jpg" alt="" />
+              <span>Ya Big Round Ant</span>
+            </button>
+          </div>
         </div>
-
-        <aside class="statement">
-          <p>
-            Built for the ones who move with
-            <span>purpose.</span>
-          </p>
-        </aside>
       </div>
     </section>
 
+    <!-- Videos -->
     <section class="section" id="videos">
       <h2 class="section-heading">
         Watch The <span>Videos</span>
       </h2>
 
       <div class="video-grid">
+        <!-- Video cards are visual placeholders until links are added. -->
         <article
           class="video-card large"
           style="--video-image: url('video-featured.jpg');"
         >
           <span class="play-button" aria-hidden="true">▶</span>
+
           <div>
             <h3>Mazarute — Official Video</h3>
             <p>South Guerilla Entertainment</p>
@@ -780,6 +1003,7 @@
           style="--video-image: url('video-2.jpg');"
         >
           <span class="play-button" aria-hidden="true">▶</span>
+
           <div>
             <h3>Behind The Movement</h3>
             <p>Studio sessions and exclusive footage</p>
@@ -788,5 +1012,81 @@
       </div>
     </section>
 
+    <!-- Contact -->
     <section class="section contact" id="contact">
-      <p class="eyebrow">Book
+      <p class="eyebrow">Bookings and Collaborations</p>
+
+      <h2 class="section-heading">
+        Connect <span>With Us</span>
+      </h2>
+
+      <p>
+        For bookings, collaborations, and business inquiries,
+        contact South Guerilla Entertainment.
+      </p>
+
+      <!-- Replace this with your real contact email. -->
+      <a
+        class="button button-primary"
+        href="mailto:your-email@example.com"
+      >
+        Contact Us
+      </a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        South Guerilla <span>Entertainment</span>
+      </div>
+
+      <p>More Than Music.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Artist roster
+    const roster = document.querySelector(".artist-roster");
+
+    if (roster) {
+      const artistCards = roster.querySelectorAll(".artist-card");
+      const featuredImage = roster.querySelector("#featured-artist-image");
+      const featuredName = roster.querySelector("#featured-artist-name");
+
+      artistCards.forEach((card) => {
+        card.addEventListener("click", () => {
+          featuredImage.src = card.dataset.image;
+          featuredImage.alt = card.dataset.name;
+          featuredName.textContent = card.dataset.name;
+
+          artistCards.forEach((artistCard) => {
+            const isSelected = artistCard === card;
+
+            artistCard.classList.toggle("is-active", isSelected);
+            artistCard.setAttribute("aria-pressed", String(isSelected));
+          });
+        });
+      });
+    }
+
+    // Mobile navigation
+    const menuButton = document.querySelector("#menuButton");
+    const mainMenu = document.querySelector("#mainMenu");
+
+    if (menuButton && mainMenu) {
+      menuButton.addEventListener("click", () => {
+        const isOpen = mainMenu.classList.toggle("is-open");
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      mainMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mainMenu.classList.remove("is-open");
+          menuButton.setAttribute("aria-expanded", "false");
+        });
+      });
+    }
+  </script>
+</body>
+</html>
