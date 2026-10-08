@@ -834,6 +834,35 @@
         transition: none;
       }
     }
+    /* Keep the featured area the same size for every artist */
+.artist-stage {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #080808;
+}
+
+/* Default appearance for the featured artist photos */
+.featured-artist-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  object-fit: cover;
+  object-position: center top;
+  background: #080808;
+}
+
+/* Center Mr Weaver's full artwork without cropping it */
+.featured-artist-image[src="Mrweaver.jpg"] {
+  object-fit: contain;
+  object-position: center center;
+}
+/* Center YA Big Round Ant full artwork without cropping it */
+.featured-artist-image[src="YaBigRoundAnt.jpg"] {
+  object-fit: contain;
+  object-position: center center;
+}
   </style>
 </head>
 
