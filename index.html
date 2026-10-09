@@ -195,7 +195,7 @@
       background: var(--black);
     }
 
-    .hero-art {
+    /* .hero-art {
       position: absolute;
       inset: 0;
       z-index: -2;
@@ -203,6 +203,21 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: min(1000px, 95vw) auto;
+      opacity: 0.5;
+      filter: grayscale(1) contrast(1.1);
+    } */
+
+    .hero-art {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+
+      background-image: url("South Guerilla Entertainment.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: min(1000px, 95vw) auto;
+      background-attachment: fixed;
+
       opacity: 0.5;
       filter: grayscale(1) contrast(1.1);
     }
